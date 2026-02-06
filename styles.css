@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: #e9e2db center center / cover fixed;
+  color: #141414;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 240, 245, 0.45), rgba(255, 182, 193, 0.35), rgba(255, 240, 245, 0.45));
+  animation: respira 18s ease-in-out infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes respira {
+  0%, 100% { opacity: 0.4; }
+  50%      { opacity: 0.75; }
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 15px 6%;
+  background: rgba(139, 69, 19, 0.65);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.12);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+.logo {
+  width: 200px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 100%;
+  border: 0px solid rgba(255, 255, 255, 0.45);
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.1rem;
+  background: linear-gradient(90deg, #ff9aa2, #ffb6c1, #ffccd5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: corTexto 8s linear infinite;
+}
+
+/* Animação de cor no título */
+@keyframes corTexto {
+  0%   { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Sobre */
+.sobre {
+  padding: 140px 6% 80px;
+  text-align: center;
+}
+
+.sobre-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.foto-perfil {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 0px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 25px rgba(139, 69, 19, 0.25);
+}
+
+.texto-sobre {
+  max-width: 580px;
+  text-align: left;
+}
+
+.texto-sobre h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.8rem;
+  color: #0e0c0c;
+  margin-bottom: 20px;
+}
+
+/* Galeria */
+.galeria {
+  padding: 60px 6%;
+  text-align: center;
+}
+
+.galeria h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.6rem;
+  color: #110f10;
+  margin-bottom: 40px;
+}
+
+.grid-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.grid-galeria img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(139, 69, 19, 0.18);
+  transition: all 0.35s ease;
+}
+
+.grid-galeria img:hover {
+  transform: scale(1.08) translateY(-8px);
+  box-shadow: 0 12px 30px rgba(139, 69, 19, 0.28);
+  border-radius: 20px;
+}
+
+/* Vídeos */
+.videos {
+  padding: 80px 6%;
+  text-align: center;
+  background: rgba(255, 240, 245, 0.35);
+}
+
+.videos h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.6rem;
+  color: #201f1f;
+  margin-bottom: 50px;
+}
+
+.grid-videos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.video-item {
+  width: 340px;
+  height: 200px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.video-item iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* Contato */
+.contato {
+  padding: 100px 6%;
+  text-align: center;
+}
+
+.contato h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4rem;
+  color: #0f0e0e;
+  margin-bottom: 20px;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  margin-top: 25px;
+  background: linear-gradient(135deg, #008000, #ffb6c1);
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 18px 55px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(255, 182, 193, 0.45);
+  transition: all 0.4s;
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 14px 35px rgba(255, 182, 193, 0.6);
+  background: linear-gradient(135deg, #131212, #ff9aa2);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #6b4e31;
+  font-size: 1.1rem;
+  background: rgba(139, 69, 19, 0.08);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .sobre-container { flex-direction: column; gap: 40px; }
+  .foto-perfil { width: 240px; height: 240px; }
+  h1 { font-size: 2.6rem; }
+  .galeria h2, .videos h2, .contato h2 { font-size: 3rem; }
+}
